@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "762546757336",
+    "project_id": "fir-superbootcamp2",
+    "storage_bucket": "fir-superbootcamp2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762546757336:android:95f4caf70e18a6964181ad",
+        "android_client_info": {
+          "package_name": "com.example.firebase_superbootcamp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmAZaSMKXROJzhBxeXtt5VloFQn_wZb6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
