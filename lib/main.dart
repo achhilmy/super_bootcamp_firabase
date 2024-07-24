@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_superbootcamp/blocs/auth_bloc/auth_bloc.dart';
+import 'package:firebase_superbootcamp/blocs/images_cubit/image_cubit.dart';
 import 'package:firebase_superbootcamp/blocs/user_bloc/user_bloc.dart';
 import 'package:firebase_superbootcamp/firebase_option.dart';
 import 'package:firebase_superbootcamp/ui/auth_pages/sign_in_pages.dart';
+import 'package:firebase_superbootcamp/ui/image_picker/images_picker.dart';
 import 'package:firebase_superbootcamp/ui/main_pages/main_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,11 +31,14 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => UserBloc(),
           ),
+          BlocProvider(
+            create: (context) => ImagesCubit(),
+          ),
         ],
         child: MaterialApp(
           title: 'Super Bootcamp2',
           theme: ThemeData(useMaterial3: true),
-          home: MainPages(),
+          home: const ImagePickerPage(),
         ));
   }
 }
