@@ -3,7 +3,10 @@ import 'package:firebase_superbootcamp/blocs/auth_bloc/auth_bloc.dart';
 import 'package:firebase_superbootcamp/blocs/images_cubit/image_cubit.dart';
 import 'package:firebase_superbootcamp/blocs/user_bloc/user_bloc.dart';
 import 'package:firebase_superbootcamp/firebase_option.dart';
+import 'package:firebase_superbootcamp/helpers/fcm_helper.dart';
+import 'package:firebase_superbootcamp/helpers/notification_helper.dart';
 import 'package:firebase_superbootcamp/ui/auth_pages/sign_in_pages.dart';
+import 'package:firebase_superbootcamp/ui/cloud_messaging/cloud_messaging_page.dart';
 import 'package:firebase_superbootcamp/ui/image_picker/images_picker.dart';
 import 'package:firebase_superbootcamp/ui/main_pages/main_pages.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +18,13 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.android,
   );
+
+  await NotificationHelper().initLocalNotifications();
+
+  ///tambahkan ini
+
+  await FcmHelper().init(); //tambahkan ini
+
   runApp(const MyApp());
 }
 
@@ -38,7 +48,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Super Bootcamp2',
           theme: ThemeData(useMaterial3: true),
-          home: const ImagePickerPage(),
+          home: const CloudMessagingPage(),
         ));
   }
 }
